@@ -1,3 +1,6 @@
+client/lib
+server/
+
 # Logs
 logs
 *.log
