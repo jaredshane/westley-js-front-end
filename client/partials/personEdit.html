@@ -10,7 +10,7 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Name"/>
+            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Name" ng-model="keeper.name"/>
           </div>
         </div>
       </div>
@@ -20,17 +20,17 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age"/>
+            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age" ng-model="keeper.age"/>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="doh" class="cols-sm-2 control-label">Date of Hire</label>
+        <label for="date_of_hire" class="cols-sm-2 control-label">Date of Hire</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="doh" id="doh"  placeholder="Date of Hire"/>
+            <input type="text" class="form-control" name="date_of_hire" id="date_of_hire"  placeholder="Date of Hire" ng-model="keeper.date_of_hire"/>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="speciality" id="speciality"  placeholder="Enter Employee's Speciality"/>
+            <input type="text" class="form-control" name="speciality" id="speciality"  placeholder="Enter Employee's Speciality" ng-model="keeper.speciality"/>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
 
 
       <div class="form-group ">
-        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Add Employee</a>
+        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button"><span ng-if="edit===true">Commit Edits<span><span ng-if="edit!==true">Commit Edits<span></a>
       </div>
 
     </form>

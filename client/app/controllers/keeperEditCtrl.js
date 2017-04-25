@@ -1,5 +1,6 @@
 app.controller('KeeperEditCtrl', function(ZookeeperFact, $scope){
 
+  $scope.edit = true;
 
 const popPage = () =>{
   ZookeeperFact.getOne()
