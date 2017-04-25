@@ -11,9 +11,9 @@ app.factory('ZookeeperFact', function($http){
             })
         })
       },
-    getOne: function() {
+    getOne: function(id) {
       return new Promise((resolve, reject) => {
-        $http.get()
+        $http.get(`http://localhost:3000/api/v1/keepers/${id}`)
           .then((data) => {
             resolve(data.data)
           })
@@ -33,6 +33,14 @@ app.factory('ZookeeperFact', function($http){
           .then((data) => {
             resolve()
           })
+      })
+    },
+    edit: function(editedZooKeeper, id) {
+      return new Promise((resolve, reject) => {
+        $http.patch(``, editedZooKeeper)
+        .then((data) => {
+          resolve(data.data.zookeepers)
+        })
       })
     }
   }

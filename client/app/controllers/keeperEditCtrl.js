@@ -1,17 +1,41 @@
-app.controller('KeeperEditCtrl', function(ZookeeperFact, $scope){
+app.controller('KeeperEditCtrl', function(ZookeeperFact, $scope, $routeParams, $location){
 
   $scope.edit = true;
 
-const popPage = () =>{
-  ZookeeperFact.getOne()
-    .then((keeper) => {
-      $scope.keeper = keeper.keeper
-      $scope.$apply()
+  let keeperId = $routeParams.id;
+  const popPage = () =>{
+    ZookeeperFact.getOne(keeperId)
+      .then((keeper) => {
+        $scope.keeper = keeper
+        $scope.$apply()
+      })
+  }
+
+  popPage()
+
+
+  $scope.sendEdit = () => {
+    let edittedKeeper = $scope.keeper
+    ZooKeeperFact.edit(edittedKeeper, keeperId)
+    .then((data) => {
+      console.log("keeper Added");
+      $location.url("/")
     })
-}
+    .catch((err) => {
+      console.log(err);
+    })
+  }
 
-popPage()
-
+  $scope.delete = () => {
+    ZooKeeperFact.delete(keeperId)
+    .then((data)=> {
+      console.log("keeper deleted");
+      $location.url("/")
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
 
 
 
