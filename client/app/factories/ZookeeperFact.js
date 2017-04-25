@@ -20,10 +20,14 @@ app.factory('ZookeeperFact', function($http){
       })
     },
     add: function(newZookeeper) {
+      console.log("add from factory")
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/v1/keepers/add`, newZookeeper)
+        $http.post(`http://localhost:3000/api/v1/keepers/new`, newZookeeper)
           .then((data) => {
-            resolve(data.data.zookeepers)
+            resolve(data.data)
+          })
+          .catch((err) => {
+            console.log(err)
           })
         })
     },
