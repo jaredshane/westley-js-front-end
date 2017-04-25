@@ -12,10 +12,10 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/personnel.html',
         controller: 'KeeperCtrl'
       }).when('/personnel/keepers/edit/:id', {
-        templateUrl: 'partials/person.html',
+        templateUrl: 'partials/personEdit.html',
         controller: 'KeeperEditCtrl'
       }).when('/personnel/keepers/add', {
-        templateUrl: 'partials/person.html',
+        templateUrl: 'partials/personEdit.html',
         controller: 'KeeperAddCtrl'
       }).when('/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
@@ -24,10 +24,10 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
       }).when('/animals/edit/id', {
-        templateUrl: 'partials/animal.html',
+        templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalEditCtrl'
       }).when('/animals/add', {
-        templateUrl: 'partials/animal.html',
+        templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalAddCtrl'
       }).when('/animal/:id', {
         templateUrl: 'partials/animals.html',
