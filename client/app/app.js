@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider){
         controller: 'KeeperAddCtrl'
       }).when('/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
-        controller: 'KeeperCtrl'
+        controller: 'OneKeeperCtrl'
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
@@ -31,7 +31,7 @@ app.config(['$routeProvider', function($routeProvider){
         controller: 'AnimalAddCtrl'
       }).when('/animal/:id', {
         templateUrl: 'partials/animals.html',
-        controller: 'AnimalCtrl'
+        controller: 'OneAnimalCtrl'
       }).otherwise({
         redirectTo: '/'
       })
