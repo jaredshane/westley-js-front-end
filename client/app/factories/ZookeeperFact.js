@@ -6,7 +6,7 @@ app.factory('ZookeeperFact', function($http){
         return new Promise((resolve, reject) =>{
           $http.get(`http://localhost:3000/api/v1/keepers`)
             .then((data) => {
-              console.log(data)
+              console.log(data.data)
               resolve(data.data)
             })
         })
