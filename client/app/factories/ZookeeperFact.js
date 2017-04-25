@@ -10,6 +10,14 @@ app.factory('ZookeeperFact', function($http){
             })
         })
       },
+    getOne: function() {
+      return new Promise((resolve, reject) => {
+        $http.get()
+          .then((data) => {
+            resolve(data.data)
+          })
+      })
+    },
     add: function(newZookeeper) {
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/addZookeeper`, newZookeeper)

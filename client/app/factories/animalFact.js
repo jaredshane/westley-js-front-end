@@ -1,4 +1,4 @@
-app.factory('AnimalFact', function($http) { 
+app.factory('AnimalFact', function($http) {
 
   return {
     getAll: function() {
@@ -9,6 +9,14 @@ app.factory('AnimalFact', function($http) {
             })
         })
       },
+    getOne: function(id) {
+      return new Promise((resolvem reject) => {
+        $http.get()
+        .then((data) => {
+          resolve(data.data)
+        })
+      })
+    },
     add: function(newAnimal) {
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
@@ -35,6 +43,6 @@ app.factory('AnimalFact', function($http) {
         })
         .catch((err) => console.log("err:", err))
       })
-    } 
+    }
   }
 });
