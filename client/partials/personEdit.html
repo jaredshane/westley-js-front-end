@@ -59,16 +59,16 @@
 
 
       <div class="form-group ">
-        <a href="#!/personnel" target="_blank" type="button" id="button" class="btn btn-warning btn-lg btn-block login-button" >Cancel</a>
+        <a href="#!/personnel" type="button" id="button" class="btn btn-warning btn-lg btn-block login-button" >Cancel</a>
       </div>
       <div class="form-group ">
-        <a href="#!/personnel" target="_blank" type="button" id="button" class="btn btn-danger btn-lg btn-block login-button" ng-submit=delete()>Delete This Employee</a>
+        <a href="#"  type="button" id="button" class="btn btn-danger btn-lg btn-block login-button" ng-click=delete()>Delete This Employee</a>
       </div>
       <div ng-if="edit===true">
-        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-submit=sendEdit()>Commit Edits</a>
+        <a href="#" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendEdit()>Commit Edits</a>
       </div>
       <div ng-if="edit!==true">
-        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-submit=sendAdd()>Add New Employee</a>
+        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Employee</a>
       </div>
 
     </form>
