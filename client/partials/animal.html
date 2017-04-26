@@ -1,1 +1,18 @@
 <h1>One Animal</h1>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{animal.animal_image }}" alt='animal image'>
+      <div class="caption">
+        <h3>{{ animal.name}}</h3>
+        <p>Species: {{ animal.species}}</p>
+        <p>Gender: {{ animal.gender}}</p>
+        <p>Age: {{ animal.age}}</p>
+        <p>Number of Kills: {{ animal.number_of_kills}}</p>
+        <p><a href="#!/animals" class="btn btn-primary" role="button">Go Back</a> <a href="#!/animals/edit/{{animal.id}}" class="btn btn-default" role="button">Edit</a></p>
+      </div>
+    </div>
+  </div>
+</div>

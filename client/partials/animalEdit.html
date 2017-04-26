@@ -2,7 +2,7 @@
 
 <div class="row main">
  <div class="main-login main-center">
-  <h5>Add an Animal to Your Park</h5>
+<!--   <h5>Add an Animal to Your Park</h5> -->
     <form class="" method="post" action="#">
 
       <div class="form-group">
@@ -10,7 +10,7 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Name"/>
+            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter Name" ng-model="animal.name" required/>
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="species" id="species"  placeholder="Enter species"/>
+            <input type="text" class="form-control" name="species" id="species"  placeholder="Enter species" ng-model="animal.species" required/>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Animal Gender"/>
+            <input type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Animal Gender" ng-model="animal.gender" required/>
           </div>
         </div>
       </div>
@@ -40,39 +40,48 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Animal Age"/>
+            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Animal Age" ng-model="animal.age"/>
           </div>
         </div>
       </div>
+
+
 
       <div class="form-group">
         <label for="kills" class="cols-sm-2 control-label">Number of Kills</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="kills" id="kills"  placeholder="Enter the number of Deaths this animal has caused"/>
+            <input type="text" class="form-control" name="kills" id="kills"  placeholder="Enter the number of Deaths this animal has caused" ng-model="animal.number_of_kills"/>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="category" class="cols-sm-2 control-label">Category of Dino</label>
+        <label for="animal_image" class="cols-sm-2 control-label">Animal Image</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <select class="form-control">
-              <option >1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <input type="text" class="form-control" name="animal_image" id="animal_image"  placeholder="Enter an image url for this animal" ng-model="animal.animal_image"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="category_id" class="cols-sm-2 control-label">Category of Dino</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            <select class="form-control" name="category_id" id="category_id" ng-model="animal.category_id" ng-options="category.id as category.name for category in categories">
+              <!-- <option class="disabled selected" ng-if="animal.category_id === undefined">Choose a Category</option> -->
+             <!--  <option  value="category.id">{{ category.name }}</option> -->
             </select>
 
           </div>
         </div>
       </div>
 
-      <div class="form-group">
+<!--       <div class="form-group">
         <label for="assignKeeper" class="cols-sm-2 control-label">Assign to Zookeeper</label>
         <div class="cols-sm-10">
           <div class="input-group">
@@ -86,10 +95,17 @@
             </select>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group ">
-        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Add Dino</a>
+        <a href="#"  type="button" id="button" class="btn btn-danger btn-lg btn-block login-button" ng-click=delete()>Delete This Animal</a>
+      </div>
+      <div ng-if="edit===true">
+        <a href="#" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendEdit()>Commit Edits</a>
+      </div>
+<!--       <div ng-if="edit===false"> -->
+      <div>
+        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Dino</a>
       </div>
 
     </form>
