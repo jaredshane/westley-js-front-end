@@ -1,14 +1,18 @@
-app.controller('AnimalEditCtrl', function($scope, AnimalFact, ZookeeperFact){
+app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams){
 
-const popPage = () =>{
-  AnimalFact.getOne()
-    .then((animal) => {
-      $scope.animal = animal.animal
-      $scope.$apply()
-    })
-}
+  let animalId = $routeParams.id
 
-popPage()
+  console.log("from the controller")
+
+  const popPage = () =>{
+    AnimalFact.getOne(animalId)
+      .then((animal) => {
+        $scope.animal = animal
+        $scope.$apply()
+      })
+  }
+
+  popPage()
 
 
 });

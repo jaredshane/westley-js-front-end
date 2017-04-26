@@ -23,7 +23,7 @@ app.config(['$routeProvider', function($routeProvider){
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
-      }).when('/animals/edit/id', {
+      }).when('/animals/edit/:id', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalEditCtrl'
       }).when('/animals/add', {
