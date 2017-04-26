@@ -3,14 +3,14 @@ app.factory('AnimalFact', function($http) {
   return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/allAnimals`)
+          $http.get(`http://localhost:3000/api/v1/animals`)
             .then((data) => {
               resolve(data.data)
             })
         })
       },
     getOne: function(id) {
-      return new Promise((resolvem reject) => {
+      return new Promise((resolve, reject) => {
         $http.get()
         .then((data) => {
           resolve(data.data)
