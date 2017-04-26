@@ -1,0 +1,97 @@
+<h1>Add, Edit or Delete an Employee</h1>
+
+<div class="row main">
+ <div class="main-login main-center">
+  <h5>Add an Employee to Your Park</h5>
+    <form class="" method="post" action="#">
+
+      <div class="form-group">
+        <label for="first_name" class="cols-sm-2 control-label">Employee First Name</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter First Name" ng-model="keeper.first_name" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="last_name" class="cols-sm-2 control-label">Employee Last Name</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter Last Name" ng-model="keeper.last_name" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender" class="cols-sm-2 control-label">Keeper Gender</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Employee gender" ng-model="keeper.gender" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="age" class="cols-sm-2 control-label">Age</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age" ng-model="keeper.age" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="date_of_hire" class="cols-sm-2 control-label">Date of Hire</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="date_of_hire" id="date_of_hire"  placeholder="Date of Hire" ng-model="keeper.date_of_hire" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="speciality" class="cols-sm-2 control-label">Speciality</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="speciality" id="speciality"  placeholder="Enter Employee's Speciality" ng-model="keeper.speciality" required/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="keeper_image" class="cols-sm-2 control-label">Keeper Image</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            <input type="text" class="form-control" name="keeper_image" id="keeper_image"  placeholder="Enter Image URL" ng-model="keeper.keeper_image" required/>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group ">
+        <a href="#!/personnel" type="button" id="button" class="btn btn-warning btn-lg btn-block login-button" >Cancel</a>
+      </div>
+      <div class="form-group ">
+        <a href="#"  type="button" id="button" class="btn btn-danger btn-lg btn-block login-button" ng-click=delete()>Delete This Employee</a>
+      </div>
+      <div ng-if="edit===true">
+        <a href="#" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendEdit()>Commit Edits</a>
+      </div>
+      <!-- <div ng-if="edit===false"> -->
+      <div>
+        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Employee</a>
+      </div>
+
+    </form>
+  </div>
+</div>

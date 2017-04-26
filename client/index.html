@@ -3,20 +3,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>My Zoo</title>
+    <title>Dino Zoo</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
   <body ng-app="Zoo">
-    <img class="titlePic"src="http://www.trbimg.com/img-5764761a/turbine/la-na-san-diego-zoo-panda-20160617-snap">
-    <h1 id="title">Welcome to the zoo</h1>
-    <div ng-view></div>
+    <div class="container">
+      <img class="titlePic"src="https://vignette4.wikia.nocookie.net/jurassicpark/images/4/42/Jurassic_Park_Logo_Black_Yellow_Red.png/revision/latest?cb=20150607192558&format=original">
+      <h1 id="title"></h1>
+      <div ng-view></div>
+    </div>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/factories/animalFact.js"></script>
     <script src="app/factories/zookeeperFact.js"></script>
     <script src="app/controllers/home.js"></script>
     <script src="app/controllers/addAnimals.js"></script>
+    <script src="app/controllers/animalAddCtrl.js"></script>
+    <script src="app/controllers/animalCtrl.js"></script>
+    <script src="app/controllers/animalEditCtrl.js"></script>
+    <script src="app/controllers/keeperAddCtrl.js"></script>
+    <script src="app/controllers/keeperCtrl.js"></script>
+     <script src="app/controllers/OneAnimalCtrl.js"></script>
+    <script src="app/controllers/OneKeeperCtrl.js"></script>
+    <script src="app/controllers/keeperEditCtrl.js"></script>
+    <script src="app/controllers/personnelCtrl.js"></script>
     <script src="app/controllers/zoo.js"></script>
 
   </body>
