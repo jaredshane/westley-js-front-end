@@ -1,10 +1,17 @@
 <!-- <h1>One person</h1> -->
-<div>
+<!-- <div>
   <a href="#!/personnel" class="btn btn-default">Show All Employees</a>
   <a href="#!/personnel/keepers/add" class="btn btn-default" ng-if="menu === 'keeper'">Add A New Keeper</a>
   <a href="#!/personnel/trainer/add" class="btn btn-default" ng-if="menu === 'trainer'">Add A New Trainer</a>
     <a href="#!/" class="btn btn-default" >Home</a>
-</div>
+</div> -->
+
+<ul class="nav nav-pills">
+  <li role="presentation" ><a href="#!/personnel">Show All Employees</a></li>
+  <li role="presentation" ng-if="menu === 'keeper'"><a href="#!/personnel/keepers/add">Add a New Keeper</a></li>
+  <li role="presentation" ng-if="menu === 'trainer'"><a href="#!/personnel/trainers/add">Add a New Keeper</a></li>
+  <li role="presentation"><a href="/#!/">Home</a></li>
+</ul>
 
 <div class="row">
   <div class="col-sm-6 col-md-4">

@@ -1,13 +1,23 @@
 <h1>All Park Employees</h1>
 
-<div>
+<!-- <div>
   <a href="#!/personnel/keepers" class="btn btn-default" ng-if="menu==='personnel'">Show Only Keepers</a>
   <a href="#!/personnel/trainers" class="btn btn-default" ng-if="trainers" ng-if="menu==='personnel'">Show Only Trainers</a>
   <a href="#!/personnel" class="btn btn-default" ng-if="menu ==='keepers'">Show All Employees</a>
   <a href="#!/personnel" class="btn btn-default" ng-if="menu ==='trainers'">Show All Employees</a>
   <a href="#!/personnel/keepers/add" class="btn btn-default" ng-if="menu === 'keepers'">Add A New Keeper</a>
   <a href="#!/" class="btn btn-default" >Home</a>
-</div>
+</div> -->
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" ng-if="menu==='personnel'"><a href="#!/personnel/keepers">Show Only Keepers</a></li>
+  <li role="presentation" ng-if="menu==='personnel'"><a href="#!/personnel/trainers">Show Only Trainers</a></li>
+  <li role="presentation" ng-if="menu==='keepers'"><a href="#!/personnel">Show All Employees</a></li>
+  <li role="presentation" ng-if="menu==='trainers'"><a href="#!/personnel">Show All Employees</a></li>
+  <li role="presentation"><a href="#!/personnel/keepers/add">Add a New Keeper</a></li>
+  <li role="presentation"><a href="/#!/">Home</a></li>
+</ul>
 
 <div class="row">
   <h2>Keepers</h2>

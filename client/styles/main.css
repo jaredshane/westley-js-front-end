@@ -1,6 +1,19 @@
 body {
   background-color: black;
   color: red;
+    display: flex;
+  flex-direction: row;
+}
+
+
+.container {
+
+}
+
+.jurassicLogo {
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
 }
 
 .animalCard {
