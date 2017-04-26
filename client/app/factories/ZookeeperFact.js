@@ -6,7 +6,6 @@ app.factory('ZookeeperFact', function($http){
         return new Promise((resolve, reject) =>{
           $http.get(`http://localhost:3000/api/v1/keepers`)
             .then((data) => {
-              console.log(data.data)
               resolve(data.data)
             })
         })
@@ -20,7 +19,6 @@ app.factory('ZookeeperFact', function($http){
       })
     },
     add: function(newZookeeper) {
-      console.log("add from factory")
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/v1/keepers/new`, newZookeeper)
           .then((data) => {
@@ -35,7 +33,6 @@ app.factory('ZookeeperFact', function($http){
       return new Promise((resolve, reject) => {
         $http.delete(`http://localhost:3000/api/v1/keepers/${id}`)
           .then((data) => {
-            console.log("data from delete")
             resolve()
           })
       })

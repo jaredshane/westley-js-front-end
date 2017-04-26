@@ -6,7 +6,6 @@ app.factory('CategoryFact', function($http){
         return new Promise((resolve, reject) =>{
           $http.get(`http://localhost:3000/api/v1/categories`)
             .then((data) => {
-              console.log(data.data)
               resolve(data.data)
             })
         })
@@ -20,7 +19,7 @@ app.factory('CategoryFact', function($http){
       })
     },
     add: function(categoryName) {
-      console.log("add from factory")
+
       return new Promise((resolve, reject) =>{
         $http.post(`http://localhost:3000/api/v1/categories/new`, categoryName)
           .then((data) => {

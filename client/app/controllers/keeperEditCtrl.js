@@ -27,8 +27,6 @@ app.controller('KeeperEditCtrl', function( ZookeeperFact, $scope, $routeParams, 
   }
 
   $scope.delete = () => {
-    console.log("scope delete happening")
-    console.log(keeperId)
     ZookeeperFact.delete(keeperId)
     .then((data)=> {
       console.log("keeper deleted");
