@@ -98,7 +98,14 @@
       </div> -->
 
       <div class="form-group ">
-        <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Add Dino</a>
+        <a href="#"  type="button" id="button" class="btn btn-danger btn-lg btn-block login-button" ng-click=delete()>Delete This Animal</a>
+      </div>
+      <div ng-if="edit===true">
+        <a href="#" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendEdit()>Commit Edits</a>
+      </div>
+      <div ng-if="edit===false">
+   <!--    <div> -->
+        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Employee</a>
       </div>
 
     </form>
