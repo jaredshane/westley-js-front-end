@@ -1,4 +1,4 @@
-app.controller('OneAnimalCtrl', function(AnimalFact, $scope, $routeParams){
+app.controller('OneAnimalCtrl', function(AnimalFact, AnimalKeeperFact, $scope, $routeParams){
 
 let animalId = $routeParams.id
 
@@ -8,6 +8,14 @@ const popPage = () =>{
       console.log("animal", animal);
       $scope.animal = animal;
       $scope.$apply()
+    })
+    .then( () => {
+      AnimalKeeperFact.getKeepersForAnimal(animalId)
+      .then( (keeper) => {
+        console.log("keeper", keeper);
+        $scope.keeper = keeper;
+        $scope.$apply()
+      })
     })
 }
 
