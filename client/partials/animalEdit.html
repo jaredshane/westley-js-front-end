@@ -2,7 +2,7 @@
 
 <div class="row main">
  <div class="main-login main-center">
-  <h5>Add an Animal to Your Park</h5>
+<!--   <h5>Add an Animal to Your Park</h5> -->
     <form class="" method="post" action="#">
 
       <div class="form-group">
@@ -72,9 +72,9 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <select class="form-control" name="category_id" id="category_id" ng-repeat="category in categories" ng-model="animal.category_id">
-              <option class="disabled selected" ng-if="animal.category_id === undefined">Choose a Category</option>
-              <option value="category.id">{{category.name}}</option>
+            <select class="form-control" name="category_id" id="category_id" ng-model="animal.category_id" ng-options="category.id as category.name for category in categories">
+              <!-- <option class="disabled selected" ng-if="animal.category_id === undefined">Choose a Category</option> -->
+             <!--  <option  value="category.id">{{ category.name }}</option> -->
             </select>
 
           </div>
@@ -103,9 +103,9 @@
       <div ng-if="edit===true">
         <a href="#" type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendEdit()>Commit Edits</a>
       </div>
-      <div ng-if="edit===false">
-   <!--    <div> -->
-        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Employee</a>
+<!--       <div ng-if="edit===false"> -->
+      <div>
+        <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" ng-click=sendAdd()>Add New Dino</a>
       </div>
 
     </form>

@@ -11,6 +11,7 @@ app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams, Cate
         $scope.animal = animal;
         CategoryFact.getAll()
         .then((categories) => {
+          console.log("categories!", categories)
           $scope.categories = categories;
           $scope.$apply()
         })
@@ -21,6 +22,8 @@ app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams, Cate
 
   $scope.sendEdit = () => {
     let edittedAnimal = $scope.animal
+    edittedAnimal.number_of_kills = parseInt(edittedAnimal.number_of_kills);
+    edittedAnimal.category_id = parseInt(edittedAnimal.category_id)
     console.log("send Edit")
     AnimalFact.edit(edittedAnimal, animalId)
     .then((data) => {

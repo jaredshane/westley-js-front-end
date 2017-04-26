@@ -31,15 +31,6 @@ app.factory('CategoryFact', function($http){
           })
         })
     },
-    delete: function(id) {
-      return new Promise((resolve, reject) => {
-        $http.delete(`http://localhost:3000/api/v1/categories/${id}`)
-          .then((data) => {
-            console.log("data from delete")
-            resolve()
-          })
-      })
-    },
     edit: function(categoryName, id) {
       return new Promise((resolve, reject) => {
         $http.put('http://localhost:3000/api/v1/categories/${id}', categoryName)
