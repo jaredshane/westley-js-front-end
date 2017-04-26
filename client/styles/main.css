@@ -1,19 +1,53 @@
 body {
   background-color: black;
   color: red;
-    display: flex;
-  flex-direction: row;
 }
 
 
-.container {
-
+.container-fluid {
+  display: flex;
+  flex-direction: column;
 }
 
 .jurassicLogo {
   margin-right: auto;
   margin-left: auto;
+  padding-top: 5%;
   justify-content: center;
+}
+
+.gates {
+  cursor: pointer;
+  align-items: center;
+}
+
+
+
+.nav {
+  background-color: red;
+  color: black;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+a  {
+  color: black;
+}
+
+.nav li a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.headline {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  margin-right: 25%;
+  margin-left: 25%;
 }
 
 .animalCard {

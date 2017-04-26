@@ -15,15 +15,15 @@
 
 <div class="row">
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
+    <div class="thumbnail center-block">
       <img src="{{ keeper.keeper_image }}" alt='keeper image'>
       <div class="caption">
-        <h3>{{ keeper.first_name}} {{ keeper.last_name }}</h3>
-        <p>Speciality: {{ keeper.speciality}}</p>
-        <p>Gender: {{ keeper.gender}}</p>
-        <p>Age: {{ keeper.age}}</p>
-        <p>Date of Hire: {{ keeper.date_of_hire}}</p>
-        <p><a href="#!/personnel/keepers" class="btn btn-primary" role="button">Go Back</a> <a href="#!/personnel/keepers/edit/{{keeper.id}}" class="btn btn-default" role="button">Edit</a></p>
+        <h3 class="text-center">{{ keeper.first_name}} {{ keeper.last_name }}</h3>
+        <p class="text-center">Speciality: {{ keeper.speciality}}</p>
+        <p class="text-center">Gender: {{ keeper.gender}}</p>
+        <p class="text-center">Age: {{ keeper.age}}</p>
+        <p class="text-center">Date of Hire: {{ keeper.date_of_hire}}</p>
+        <p class="text-center"><a href="#!/personnel/keepers" class="btn btn-primary" role="button">Go Back</a> <a href="#!/personnel/keepers/edit/{{keeper.id}}" class="btn btn-default" role="button">Edit</a></p>
       </div>
     </div>
   </div>
