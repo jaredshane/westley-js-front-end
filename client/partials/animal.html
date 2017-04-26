@@ -11,6 +11,7 @@
         <p>Gender: {{ animal.gender}}</p>
         <p>Age: {{ animal.age}}</p>
         <p>Number of Kills: {{ animal.number_of_kills}}</p>
+        <p>Keeper: <a href='#!/personnel/keepers/{{keeper.id}}'>{{keeper.first_name}} {{keeper.last_name}}</a></p>
         <p><a href="#!/animals" class="btn btn-primary" role="button">Go Back</a> <a href="#!/animals/edit/{{animal.id}}" class="btn btn-default" role="button">Edit</a></p>
       </div>
     </div>
