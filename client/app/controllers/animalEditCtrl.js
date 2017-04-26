@@ -1,6 +1,7 @@
 app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams, CategoryFact, $location){
 
   let animalId = $routeParams.id
+
   $scope.edit = true;
 
   console.log("from the controller")
