@@ -29,8 +29,8 @@ app.config(['$routeProvider', function($routeProvider){
       }).when('/animals/add', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalAddCtrl'
-      }).when('/animal/:id', {
-        templateUrl: 'partials/animals.html',
+      }).when('/animals/:id', {
+        templateUrl: 'partials/animal.html',
         controller: 'OneAnimalCtrl'
       }).otherwise({
         redirectTo: '/'

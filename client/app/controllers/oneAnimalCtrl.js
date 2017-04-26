@@ -1,9 +1,12 @@
-app.controller('OneAnimalCtrl', function(AnimalFact, $scope){
+app.controller('OneAnimalCtrl', function(AnimalFact, $scope, $routeParams){
+
+let animalId = $routeParams.id
 
 const popPage = () =>{
-  AnimalFact.getOne()
+  AnimalFact.getOne(animalId)
     .then((animal) => {
-      $scope.animal = animal.animal
+      console.log("animal", animal);
+      $scope.animal = animal;
       $scope.$apply()
     })
 }

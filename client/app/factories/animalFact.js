@@ -11,8 +11,9 @@ app.factory('AnimalFact', function($http) {
       },
     getOne: function(id) {
       return new Promise((resolve, reject) => {
-        $http.get()
+        $http.get(`http://localhost:3000/api/v1/animals/${id}`)
         .then((data) => {
+          console.log(data.data)
           resolve(data.data)
         })
       })

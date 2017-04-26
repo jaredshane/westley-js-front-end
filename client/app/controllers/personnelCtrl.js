@@ -1,9 +1,9 @@
-app.controller('PersonnelCtrl', function(ZookeeperFact, $scope){
+app.controller('PersonnelCtrl', function(zookeeperFact, $scope){
 
 
   $scope.menu = "personnel"
   const popPage = () =>{
-    ZookeeperFact.getAll()
+    zookeeperFact.getAll()
       .then((keepers) => {
         $scope.keepers = keepers;
         $scope.$apply()
