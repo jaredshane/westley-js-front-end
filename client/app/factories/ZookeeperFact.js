@@ -4,7 +4,7 @@ app.factory('ZookeeperFact', function($http){
     return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/v1/keepers`)
+          $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/keepers`)
             .then((data) => {
               resolve(data.data)
             })
@@ -12,7 +12,7 @@ app.factory('ZookeeperFact', function($http){
       },
     getOne: function(id) {
       return new Promise((resolve, reject) => {
-        $http.get(`http://localhost:3000/api/v1/keepers/${id}`)
+        $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/keepers/${id}`)
           .then((data) => {
             resolve(data.data)
           })
@@ -20,7 +20,7 @@ app.factory('ZookeeperFact', function($http){
     },
     add: function(newZookeeper) {
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/v1/keepers/new`, newZookeeper)
+        $http.post(`https://jurassic-park-api.herokuapp.com/api/v1/keepers/new`, newZookeeper)
           .then((data) => {
             resolve(data.data)
           })
@@ -31,7 +31,7 @@ app.factory('ZookeeperFact', function($http){
     },
     delete: function(id) {
       return new Promise((resolve, reject) => {
-        $http.delete(`http://localhost:3000/api/v1/keepers/${id}`)
+        $http.delete(`https://jurassic-park-api.herokuapp.com/api/v1/keepers/${id}`)
           .then((data) => {
             resolve()
           })
@@ -39,7 +39,7 @@ app.factory('ZookeeperFact', function($http){
     },
     edit: function(editedZooKeeper, id) {
       return new Promise((resolve, reject) => {
-        $http.put('http://localhost:3000/api/v1/keepers/${id}', editedZooKeeper)
+        $http.put('https://jurassic-park-api.herokuapp.com/api/v1/keepers/${id}', editedZooKeeper)
         .then((data) => {
           resolve(data.data.zookeepers)
         })

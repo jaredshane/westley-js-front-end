@@ -4,7 +4,7 @@ app.factory('CategoryFact', function($http){
     return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/v1/categories`)
+          $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/categories`)
             .then((data) => {
               resolve(data.data)
             })
@@ -12,7 +12,7 @@ app.factory('CategoryFact', function($http){
       },
     getOne: function(id) {
       return new Promise((resolve, reject) => {
-        $http.get(`http://localhost:3000/api/v1/categories/${id}`)
+        $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/categories/${id}`)
           .then((data) => {
             resolve(data.data)
           })
@@ -21,7 +21,7 @@ app.factory('CategoryFact', function($http){
     add: function(categoryName) {
 
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/v1/categories/new`, categoryName)
+        $http.post(`https://jurassic-park-api.herokuapp.com/api/v1/categories/new`, categoryName)
           .then((data) => {
             resolve(data.data)
           })
@@ -32,7 +32,7 @@ app.factory('CategoryFact', function($http){
     },
     edit: function(categoryName, id) {
       return new Promise((resolve, reject) => {
-        $http.put('http://localhost:3000/api/v1/categories/${id}', categoryName)
+        $http.put('https://jurassic-park-api.herokuapp.com/api/v1/categories/${id}', categoryName)
         .then((data) => {
           resolve(data.data)
         })
