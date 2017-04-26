@@ -13,7 +13,6 @@ app.factory('AnimalFact', function($http) {
       return new Promise((resolve, reject) => {
         $http.get(`http://localhost:3000/api/v1/animals/${id}`)
         .then((data) => {
-          console.log(data.data)
           resolve(data.data)
         })
       })
@@ -37,7 +36,6 @@ app.factory('AnimalFact', function($http) {
     },
 
     edit: (updateInfo, id) => {
-      console.log("edit from the factory")
       return new Promise((resolve, reject) => {
         $http.put(`http://localhost:3000/api/v1/animals/${id}`, updateInfo)
         .then((data) => {
