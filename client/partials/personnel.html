@@ -1,1 +1,48 @@
-<h1>Lots of people</h1>
+<h1>All Park Employees</h1>
+
+<!-- <div>
+  <a href="#!/personnel/keepers" class="btn btn-default" ng-if="menu==='personnel'">Show Only Keepers</a>
+  <a href="#!/personnel/trainers" class="btn btn-default" ng-if="trainers" ng-if="menu==='personnel'">Show Only Trainers</a>
+  <a href="#!/personnel" class="btn btn-default" ng-if="menu ==='keepers'">Show All Employees</a>
+  <a href="#!/personnel" class="btn btn-default" ng-if="menu ==='trainers'">Show All Employees</a>
+  <a href="#!/personnel/keepers/add" class="btn btn-default" ng-if="menu === 'keepers'">Add A New Keeper</a>
+  <a href="#!/" class="btn btn-default" >Home</a>
+</div> -->
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" ng-if="menu==='personnel'"><a href="#!/personnel/keepers">Show Only Keepers</a></li>
+  <li role="presentation" ng-if="menu==='personnel'"><a href="#!/personnel/trainers">Show Only Trainers</a></li>
+  <li role="presentation" ng-if="menu==='keepers'"><a href="#!/personnel">Show All Employees</a></li>
+  <li role="presentation" ng-if="menu==='trainers'"><a href="#!/personnel">Show All Employees</a></li>
+  <li role="presentation"><a href="#!/personnel/keepers/add">Add a New Keeper</a></li>
+  <li role="presentation"><a href="/#!/">Home</a></li>
+</ul>
+
+<div class="row">
+  <h2 class="text-center">Keepers</h2>
+  <div class="col-sm-6 col-md-4" ng-repeat="keeper in keepers">
+    <div class="thumbnail center-block">
+      <img src="{{keeper.keeper_image}}" alt='keeper image'>
+      <div class="caption">
+        <h3 class="text-center">{{ keeper.first_name}} {{ keeper.last_name }}</h3>
+        <p class="text-center">{{ keeper.speciality}}</p>
+        <p class="text-center"><a href="#!/personnel/keepers/{{keeper.id}}" class="btn btn-primary" role="button">View</a> <a href="#!/personnel/keepers/edit/{{keeper.id}}" class="btn btn-default" role="button">Edit</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-if="trainers">
+  <h2 class="text-center">Trainers</h2>
+  <div class="col-sm-6 col-md-4" ng-repeat="trainer in trainers">
+    <div class="thumbnail center-block">
+      <img src=trainer.trainer_image alt='trainer image'>
+      <div class="caption">
+        <h3 class="text-center">{{ trainer.first_name}} {{ trainer.last_name }}</h3>
+        <p class="text-center">{{ trainer.speciality}}</p>
+        <p class="text-center"><a href="#!/personnel/trainers/{{trainer.id}}" class="btn btn-primary" role="button">View</a> <a href="#!/personnel/trainers/edit/${trainer.id}" class="btn btn-default" role="button">Edit</a></p>
+      </div>
+    </div>
+  </div>
+</div>

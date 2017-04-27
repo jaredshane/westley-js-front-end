@@ -1,1 +1,26 @@
-<h1>One Animal</h1>
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" ><a href="#!/">Home</a></li>
+  <li role="presentation"><a href="#!/animals">See All Animals</a></li>
+</ul>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail center-block">
+      <img src="{{animal.animal_image }}" alt='animal image'>
+      <div class="caption">
+
+        <h3 class="text-center">{{ animal.name}}</h3>
+        <p class="text-center">Species: {{ animal.species}}</p>
+        <p class="text-center">Gender: {{ animal.gender}}</p>
+        <p class="text-center">Age: {{ animal.age}}</p>
+        <p class="text-center">Number of Kills: {{ animal.number_of_kills}}</p>
+        <p class="text-center">Keeper: <a href='#!/personnel/keepers/{{keeper.id}}'>{{keeper.first_name}} {{keeper.last_name}}</a></p>
+        <p class="text-center"><a href="#!/animals" class="btn btn-primary" role="button">See All Animals</a> <a href="#!/animals/edit/{{animal.id}}" class="btn btn-default" role="button">Edit</a></p>
+
+      </div>
+    </div>
+  </div>
+</div>

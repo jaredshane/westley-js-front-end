@@ -23,14 +23,14 @@ app.config(['$routeProvider', function($routeProvider){
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
-      }).when('/animals/edit/id', {
+      }).when('/animals/edit/:id', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalEditCtrl'
       }).when('/animals/add', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalAddCtrl'
-      }).when('/animal/:id', {
-        templateUrl: 'partials/animals.html',
+      }).when('/animals/:id', {
+        templateUrl: 'partials/animal.html',
         controller: 'OneAnimalCtrl'
       }).otherwise({
         redirectTo: '/'

@@ -3,15 +3,15 @@ app.factory('AnimalFact', function($http) {
   return {
     getAll: function() {
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/allAnimals`)
+          $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/animals`)
             .then((data) => {
               resolve(data.data)
             })
         })
       },
     getOne: function(id) {
-      return new Promise((resolvem reject) => {
-        $http.get()
+      return new Promise((resolve, reject) => {
+        $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/animals/${id}`)
         .then((data) => {
           resolve(data.data)
         })
@@ -19,25 +19,25 @@ app.factory('AnimalFact', function($http) {
     },
     add: function(newAnimal) {
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
+        $http.post(`https://jurassic-park-api.herokuapp.com/api/v1/animals/new`, newAnimal)
           .then((data) => {
             resolve(data)
           })
         })
     },
 
-    remove: function(id) {
+    delete: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`http://localhost:3000/api/removeAnimal/${id}`)
+        $http.delete(`https://jurassic-park-api.herokuapp.com/api/v1/animals/${id}`)
           .then((data) => {
             resolve()
           })
       })
     },
 
-    update: (id, updateInfo) => {
+    edit: (updateInfo, id) => {
       return new Promise((resolve, reject) => {
-        $http.patch(`http://localhost:3000/api/updateAnimal/${id}`, updateInfo)
+        $http.put(`https://jurassic-park-api.herokuapp.com/api/v1/animals/${id}`, updateInfo)
         .then((data) => {
           resolve()
         })

@@ -1,15 +1,25 @@
-app.controller('OneKeeperCtrl', function(){
+app.controller('OneKeeperCtrl', function($scope, $routeParams, ZookeeperFact){
 
 
-const popPage = () =>{
-  ZookeeperFact.getOne()
-    .then((keeper) => {
-      $scope.keeper = keeper.keeper
-      $scope.$apply()
+  $scope.menu = "keeper";
+
+  let keeperId = $routeParams.id;
+  console.log("id", keeperId);
+  const popPage = () => {
+    ZookeeperFact.getOne(keeperId)
+      .then((keeper) => {
+        $scope.keeper = keeper
+        console.log(keeper)
+        $scope.$apply()
+      })
+    ZookeeperFact.getAnimals(keeperId)
+    .then( (animals) => {
+      console.log(animals)
+      $scope.keepersAnimals = animals
     })
-}
+  }
 
-popPage()
+  popPage()
 
 
 
