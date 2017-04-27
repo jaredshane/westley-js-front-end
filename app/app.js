@@ -2,7 +2,7 @@ const app = angular.module('Zoo', ['ngRoute'])
 
 app.config(['$routeProvider', function($routeProvider){
       $routeProvider
-      .when('westley-js-front-end/#!/', {
+      .when('/', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
       }).when('westley-js-front-end/#!/personnel', {
@@ -45,6 +45,6 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/animal.html',
         controller: 'OneAnimalCtrl'
       }).otherwise({
-        redirectTo: 'westley-js-front-end/#!/'
+        redirectTo: '/'
       })
 }])
