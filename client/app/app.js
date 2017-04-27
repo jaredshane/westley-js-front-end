@@ -21,8 +21,8 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/person.html',
         controller: 'OneKeeperCtrl'
       }).when('/personnel/trainers', {
-        templateUrl: '',
-        controller: ''
+        templateUrl: 'partials/personnel.html',
+        controller: 'TrainerCtrl'
       }).when('/personnel/trainers/edit/:id', {
         templateUrl: '',
         controller: ''
