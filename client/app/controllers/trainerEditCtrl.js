@@ -1,14 +1,20 @@
-app.controller('TrainerEditCtrl', function( TrainerFact, $scope, $routeParams, $location){
+app.controller('TrainerEditCtrl', function( TrainerFact, CategoryFact, $scope, $routeParams, $location){
 
   $scope.edit = true;
+  $scope.menu = 'trainer';
 
   let trainerId = parseInt($routeParams.id);
   const popPage = () =>{
     TrainerFact.getOne(trainerId)
-      .then((keeper) => {
+      .then((trainer) => {
         $scope.trainer = trainer
-        $scope.$apply()
+        CategoryFact.getAll()
+        .then((categories) => {
+          $scope.categories = categories;  // Add categories to trainer edit page
+          $scope.$apply()
+        })
       })
+
   }
 
   popPage()

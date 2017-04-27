@@ -24,7 +24,8 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter First Name" ng-model="keeper.first_name" required/>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter First Name" ng-model="keeper.first_name" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter First Name" ng-model="trainer.first_name" required/>
           </div>
         </div>
       </div>
@@ -34,17 +35,20 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter Last Name" ng-model="keeper.last_name" required/>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter Last Name" ng-model="keeper.last_name" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter Last Name" ng-model="trainer.last_name" required/>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="gender" class="cols-sm-2 control-label">Keeper Gender</label>
+        <label ng-if="menu === 'keeper'" for="gender" class="cols-sm-2 control-label">Keeper Gender</label>
+        <label ng-if="menu === 'trainer'" for="gender" class="cols-sm-2 control-label">Trainer Gender</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Employee gender" ng-model="keeper.gender" required/>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Employee gender" ng-model="keeper.gender" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="gender" id="gender"  placeholder="Enter Employee gender" ng-model="trainer.gender" required/>
           </div>
         </div>
       </div>
@@ -54,7 +58,8 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age" ng-model="keeper.age" required/>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age" ng-model="keeper.age" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="age" id="age"  placeholder="Enter Employee's Current Age" ng-model="trainer.age" required/>
           </div>
         </div>
       </div>
@@ -64,13 +69,14 @@
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="date_of_hire" id="date_of_hire"  placeholder="Date of Hire" ng-model="keeper.date_of_hire" required/>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="date_of_hire" id="date_of_hire"  placeholder="Date of Hire" ng-model="keeper.date_of_hire" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="date_of_hire" id="date_of_hire"  placeholder="Date of Hire" ng-model="trainer.date_of_hire" required/>
           </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="speciality" class="cols-sm-2 control-label">Speciality</label>
+      <div ng-if="menu === 'keeper'" class="form-group">
+        <label  for="speciality" class="cols-sm-2 control-label">Speciality</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -79,12 +85,27 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="keeper_image" class="cols-sm-2 control-label">Keeper Image</label>
+      <div ng-if="menu === 'trainer'" class="form-group">
+        <label  for="expertise" class="cols-sm-2 control-label">Trainer Expertise</label>
         <div class="cols-sm-10">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" name="keeper_image" id="keeper_image"  placeholder="Enter Image URL" ng-model="keeper.keeper_image" required/>
+            <select class="form-control" name="category_id" id="category_id" ng-model="animal.category_id" ng-options="category.id as category.name for category in categories">
+              <!-- <option class="disabled selected" ng-if="animal.category_id === undefined">Choose a Category</option> -->
+             <!--  <option  value="category.id">{{ category.name }}</option> -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label ng-if="menu === 'keeper'" for="keeper_image" class="cols-sm-2 control-label">Keeper Image</label>
+        <label ng-if="menu === 'trainer'" for="trainer_image" class="cols-sm-2 control-label">Trainer Image</label>
+        <div class="cols-sm-10">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            <input ng-if="menu === 'keeper'" type="text" class="form-control" name="keeper_image" id="keeper_image"  placeholder="Enter Image URL" ng-model="keeper.keeper_image" required/>
+            <input ng-if="menu === 'trainer'" type="text" class="form-control" name="trainer_image" id="trainer_image"  placeholder="Enter Image URL" ng-model="trainer.trainer_image" required/>
           </div>
         </div>
       </div>

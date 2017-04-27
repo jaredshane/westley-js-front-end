@@ -1,4 +1,4 @@
-app.controller('OneTrainerCtrl', function($scope, $routeParams, TrainerFact){
+app.controller('OneTrainerCtrl', function($scope, $routeParams, TrainerFact, CategoryFact){
 
 
   $scope.menu = "trainer";
@@ -12,6 +12,13 @@ app.controller('OneTrainerCtrl', function($scope, $routeParams, TrainerFact){
         $scope.trainer = trainer
         console.log(trainer)
         $scope.$apply()
+      })
+      .then( () => {
+        CategoryFact.getOne($scope.trainer.category_id)
+        .then((category) => {
+          $scope.category = category
+          $scope.$apply()
+        })
       })
   }
 
