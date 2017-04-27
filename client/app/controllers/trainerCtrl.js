@@ -1,17 +1,15 @@
 app.controller('TrainerCtrl', function(TrainerFact, $scope){
 
-  // $scope.menu = "keepers";
+  $scope.menu = "trainers";
 
-  // const popPage = () =>{
-  //   ZookeeperFact.getAll()
-  //     .then((keepers) => {
-  //       $scope.keepers = keepers
-  //       $scope.$apply()
-  //     })
-  // }
+  const popPage = () =>{
+    TrainerFact.getAll()
+      .then((trainers) => {
+        $scope.trainers = trainers
+        $scope.$apply()
+      })
+  }
 
-  // popPage()
-
-
+  popPage()
 
 });
