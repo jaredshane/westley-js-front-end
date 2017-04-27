@@ -14,8 +14,8 @@ app.controller('OneKeeperCtrl', function($scope, $routeParams, ZookeeperFact){
       })
     ZookeeperFact.getAnimals(keeperId)
     .then( (animals) => {
-      console.log(animals)
       $scope.keepersAnimals = animals
+      $scope.$apply()
     })
   }
 
