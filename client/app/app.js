@@ -20,6 +20,18 @@ app.config(['$routeProvider', function($routeProvider){
       }).when('/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
         controller: 'OneKeeperCtrl'
+      }).when('/personnel/trainers', {
+        templateUrl: '',
+        controller: ''
+      }).when('/personnel/trainers/edit/:id', {
+        templateUrl: '',
+        controller: ''
+      }).when('/personnel/trainers/add', {
+        templateUrl: '',
+        controller: ''
+      }).when('/personnel/trainers/:id', {
+        templateUrl: '',
+        controller: ''
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
