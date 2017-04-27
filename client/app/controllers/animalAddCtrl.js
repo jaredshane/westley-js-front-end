@@ -23,7 +23,6 @@ app.controller('AnimalAddCtrl', function($scope, $routeParams, CategoryFact, Ani
       newAnimal.category_id = parseInt(newAnimal.category_id)
       AnimalFact.add(newAnimal)
       .then((data) => {
-        console.log("animal Added");
         $location.url("/")
       })
       .catch((err) => {

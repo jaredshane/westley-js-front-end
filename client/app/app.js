@@ -12,10 +12,10 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/personnel.html',
         controller: 'KeeperCtrl'
       }).when('/personnel/keepers/edit/:id', {
-        templateUrl: 'partials/personEdit.html',
+        templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperEditCtrl'
       }).when('/personnel/keepers/add', {
-        templateUrl: 'partials/personEdit.html',
+        templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperAddCtrl'
       }).when('/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
