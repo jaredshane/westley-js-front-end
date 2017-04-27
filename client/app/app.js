@@ -24,14 +24,14 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/personnel.html',
         controller: 'TrainerCtrl'
       }).when('/personnel/trainers/edit/:id', {
-        templateUrl: '',
-        controller: ''
+        templateUrl: 'partials/personEdit.html',
+        controller: 'TrainerEditCtrl'
       }).when('/personnel/trainers/add', {
-        templateUrl: '',
-        controller: ''
+        templateUrl: 'partials/personEdit.html',
+        controller: 'TrainerAddCtrl.js'
       }).when('/personnel/trainers/:id', {
-        templateUrl: '',
-        controller: ''
+        templateUrl: 'partials/person.html',
+        controller: 'OneTrainerCtrl'
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
