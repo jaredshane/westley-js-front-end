@@ -44,6 +44,14 @@ app.factory('ZookeeperFact', function($http){
           resolve(data.data.zookeepers)
         })
       })
+    },
+    getAnimals: function(id) {
+      return new Promise((resolve, reject) => {
+        $http.get(`https://jurassic-park-api.herokuapp.com/api/v1/keepers/animals/${id}`)
+        .then((data) => {
+          resolve(data.data)
+        })
+      })
     }
   }
 })
