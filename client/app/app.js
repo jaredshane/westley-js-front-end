@@ -27,7 +27,7 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/personEdit.html',
         controller: 'TrainerEditCtrl'
       }).when('/personnel/trainers/add', {
-        templateUrl: 'partials/personEdit.html',
+        templateUrl: 'partials/trainerEdit.html',
         controller: 'TrainerAddCtrl'
       }).when('/personnel/trainers/:id', {
         templateUrl: 'partials/person.html',
