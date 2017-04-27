@@ -4,7 +4,7 @@ app.factory('TrainerFact', function($http){
   return {
     getAll: function() {
       return new Promise((resolve, reject) =>{
-        $http.get(`http://localhost:8080/api/v1/trainers/`)
+        $http.get(`http://localhost:3000/api/v1/trainers/`)
           .then((data) => {
             resolve(data.data)
           })
@@ -13,7 +13,7 @@ app.factory('TrainerFact', function($http){
 
     getOne: function(id) {
       return new Promise((resolve, reject) => {
-        $http.get(`http://localhost:8080/api/v1/trainers/${id}`)
+        $http.get(`http://localhost:3000/api/v1/trainers/${id}`)
         .then((data) => {
           resolve(data.data)
         })
@@ -22,7 +22,7 @@ app.factory('TrainerFact', function($http){
 
     add: function(newTrainer) {
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:8080/api/v1/trainers/new`, newTrainer)
+        $http.post(`http://localhost:3000/api/v1/trainers/new`, newTrainer)
           .then((data) => {
             resolve(data)
           })
@@ -31,7 +31,7 @@ app.factory('TrainerFact', function($http){
 
     delete: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`http://localhost:8080/api/v1/trainers/${id}`)
+        $http.delete(`http://localhost:3000/api/v1/trainers/${id}`)
           .then((data) => {
             resolve()
           })
@@ -40,7 +40,7 @@ app.factory('TrainerFact', function($http){
 
     edit: (updateInfo, id) => {
       return new Promise((resolve, reject) => {
-        $http.put(`http://localhost:8080/api/v1/trainers/${id}`, updateInfo)
+        $http.put(`http://localhost:3000/api/v1/trainers/${id}`, updateInfo)
         .then((data) => {
           resolve()
         })
