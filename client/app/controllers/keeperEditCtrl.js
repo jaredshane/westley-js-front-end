@@ -1,6 +1,7 @@
 app.controller('KeeperEditCtrl', function( ZookeeperFact, $scope, $routeParams, $location){
 
   $scope.edit = true;
+  $scope.menu = 'keeper';
 
   let keeperId = parseInt($routeParams.id);
   const popPage = () =>{

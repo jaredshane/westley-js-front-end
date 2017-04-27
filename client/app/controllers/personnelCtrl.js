@@ -1,4 +1,4 @@
-app.controller('PersonnelCtrl', function(ZookeeperFact, $scope){
+app.controller('PersonnelCtrl', function(ZookeeperFact, TrainerFact, $scope){
 
 
   $scope.menu = "personnel"
@@ -7,6 +7,13 @@ app.controller('PersonnelCtrl', function(ZookeeperFact, $scope){
       .then((keepers) => {
         $scope.keepers = keepers;
         $scope.$apply()
+      })
+      .then( () => {
+        TrainerFact.getAll()
+        .then((trainers) => {
+          $scope.trainers = trainers;
+          $scope.$apply()
+        })
       })
   }
 

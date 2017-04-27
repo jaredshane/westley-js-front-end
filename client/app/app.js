@@ -12,14 +12,26 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: 'partials/personnel.html',
         controller: 'KeeperCtrl'
       }).when('/personnel/keepers/edit/:id', {
-        templateUrl: 'partials/personEdit.html',
+        templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperEditCtrl'
       }).when('/personnel/keepers/add', {
-        templateUrl: 'partials/personEdit.html',
+        templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperAddCtrl'
       }).when('/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
         controller: 'OneKeeperCtrl'
+      }).when('/personnel/trainers', {
+        templateUrl: 'partials/personnel.html',
+        controller: 'TrainerCtrl'
+      }).when('/personnel/trainers/edit/:id', {
+        templateUrl: 'partials/personEdit.html',
+        controller: 'TrainerEditCtrl'
+      }).when('/personnel/trainers/add', {
+        templateUrl: 'partials/personEdit.html',
+        controller: 'TrainerAddCtrl'
+      }).when('/personnel/trainers/:id', {
+        templateUrl: 'partials/person.html',
+        controller: 'OneTrainerCtrl'
       }).when('/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
