@@ -26,7 +26,6 @@ app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams, Cate
     edittedAnimal.category_id = parseInt(edittedAnimal.category_id)
     AnimalFact.edit(edittedAnimal, animalId)
     .then((data) => {
-      console.log("animal editted");
       $location.url("/")
     })
     .catch((err) => {
@@ -37,7 +36,6 @@ app.controller('AnimalEditCtrl', function($scope, AnimalFact, $routeParams, Cate
   $scope.delete = () => {
     AnimalFact.delete(animalId)
     .then((data)=> {
-      console.log("animal deleted");
       $location.url("/")
     })
     .catch((err) => {
