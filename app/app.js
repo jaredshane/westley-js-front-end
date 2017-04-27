@@ -2,49 +2,49 @@ const app = angular.module('Zoo', ['ngRoute'])
 
 app.config(['$routeProvider', function($routeProvider){
       $routeProvider
-      .when('/', {
+      .when('westley-js-front-end/#!/', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
-      }).when('/personnel', {
+      }).when('westley-js-front-end/#!/personnel', {
         templateUrl: 'partials/personnel.html',
         controller: 'PersonnelCtrl'
-      }).when('/personnel/keepers', {
+      }).when('westley-js-front-end/#!/personnel/keepers', {
         templateUrl: 'partials/personnel.html',
         controller: 'KeeperCtrl'
-      }).when('/personnel/keepers/edit/:id', {
+      }).when('westley-js-front-end/#!/personnel/keepers/edit/:id', {
         templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperEditCtrl'
-      }).when('/personnel/keepers/add', {
+      }).when('westley-js-front-end/#!/personnel/keepers/add', {
         templateUrl: 'partials/keeperEdit.html',
         controller: 'KeeperAddCtrl'
-      }).when('/personnel/keepers/:id', {
+      }).when('westley-js-front-end/#!/personnel/keepers/:id', {
         templateUrl: 'partials/person.html',
         controller: 'OneKeeperCtrl'
-      }).when('/personnel/trainers', {
+      }).when('westley-js-front-end/#!/personnel/trainers', {
         templateUrl: 'partials/personnel.html',
         controller: 'TrainerCtrl'
-      }).when('/personnel/trainers/edit/:id', {
+      }).when('westley-js-front-end/#!/personnel/trainers/edit/:id', {
         templateUrl: 'partials/trainerEdit.html',
         controller: 'TrainerEditCtrl'
-      }).when('/personnel/trainers/add', {
+      }).when('westley-js-front-end/#!/personnel/trainers/add', {
         templateUrl: 'partials/trainerEdit.html',
         controller: 'TrainerAddCtrl'
-      }).when('/personnel/trainers/:id', {
+      }).when('westley-js-front-end/#!/personnel/trainers/:id', {
         templateUrl: 'partials/person.html',
         controller: 'OneTrainerCtrl'
-      }).when('/animals', {
+      }).when('westley-js-front-end/#!/animals', {
         templateUrl: 'partials/animals.html',
         controller: 'AnimalCtrl'
-      }).when('/animals/edit/:id', {
+      }).when('westley-js-front-end/#!/animals/edit/:id', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalEditCtrl'
-      }).when('/animals/add', {
+      }).when('westley-js-front-end/#!/animals/add', {
         templateUrl: 'partials/animalEdit.html',
         controller: 'AnimalAddCtrl'
-      }).when('/animals/:id', {
+      }).when('westley-js-front-end/#!/animals/:id', {
         templateUrl: 'partials/animal.html',
         controller: 'OneAnimalCtrl'
       }).otherwise({
-        redirectTo: '/'
+        redirectTo: 'westley-js-front-end/#!/'
       })
 }])
