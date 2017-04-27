@@ -23,6 +23,7 @@
         <p class="text-center">Gender: {{ keeper.gender}}</p>
         <p class="text-center">Age: {{ keeper.age}}</p>
         <p class="text-center">Date of Hire: {{ keeper.date_of_hire}}</p>
+        <p class="text-center">Animal: <span ng-repeat="animal in keepersAnimals">  <a href='#!/animals/{{animal.id}}'>{{animal.name}}</a> </span></p>
         <p class="text-center"><a href="#!/personnel/keepers" class="btn btn-primary" role="button">Go Back</a> <a href="#!/personnel/keepers/edit/{{keeper.id}}" class="btn btn-default" role="button">Edit</a></p>
       </div>
     </div>
